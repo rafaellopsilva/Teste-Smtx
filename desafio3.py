@@ -15,7 +15,7 @@ def addToUrlResponses(line):
     else:
         return [line.split("\" HTTP")[0].split()[len(line.split("\" HTTP")[0].split())-1], line.split("\" ")[2].split()[0]]
         
-lines = sc.textFile("file:///SparkCourse/access_log_Jul95") + sc.textFile("file:///SparkCourse/access_log_Aug95")
+lines = sc.textFile("file://access_log_Jul95") + sc.textFile("file://access_log_Aug95")
 # Mapeia a url e status das requisições e em seguida filtra para retornar apenas as con status '404'.
 hostResponse = lines.map(lambda x: addToUrlResponses(x)).filter(lambda x: x[1] == "404" )
 # Agrupa por valor apenas as url's, contando a quantidade de aparições de cada.
