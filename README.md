@@ -29,4 +29,17 @@ O GroupByKey se torna menos eficiente que o ReduceByKey porque enquanto o Reduce
 
 # Desafios
 
-Para cada desafio, um arquivo diferente está adicionado ao projeto, que conterá uma saída com o comando "print" para cada desafio.
+Através de dois datasets da NASA, que contém um log de requisições feitas a um servidor da Flórida, foram desenvolvidos 5 scripts para solucionar 5 desafios diferentes.
+
+Para cada desafio, um arquivo diferente está adicionado ao projeto, que conterá uma saída com o comando "print" para cada desafio. Todos os desafios foram desenvolvidos na linguagem  Python.
+
+Obs: Para executar os comandos, é necessário indicar o caminho correto dos datasets para a váriável 'line'.
+
+Os datasets devem ser baixados dos seguintes links: 
+
+1. ftp://ita.ee.lbl.gov/traces/NASA_access_log_Jul95.gz
+2. ftp://ita.ee.lbl.gov/traces/NASA_access_log_Aug95.gz
+
+# Importações dos Arquivos
+
+Todos os arquivos realizam a importação do SparkConf e SparkContext do pyspark, sendo necessário a prévia instalação do mesmo. Além disso, o arquivo desafio4.py utiliza a importação da biblioteca collections.
