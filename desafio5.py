@@ -15,7 +15,7 @@ def addToBytesReturned(line):
     else:
         return int(line.split("\" ")[2].split()[1]) if line.split("\" ")[2].split()[1] != "-" else 0 
 
-lines = sc.textFile("file:///SparkCourse/access_log_Jul95") + sc.textFile("file:///SparkCourse/access_log_Aug95")
+lines = sc.textFile("file://access_log_Jul95") + sc.textFile("file://access_log_Aug95")
 # Pega todas as linhas e mapeia para os bytes das requisições.
 # Em seguida reduz o resultado somando todos os valores.
 result = lines.map(lambda x: addToBytesReturned(x)).reduce(lambda x,y: x+y)
