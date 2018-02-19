@@ -15,7 +15,7 @@ def addToResponses(line):
     else:
         return line.split("\" ")[2].split()[0]
 
-lines = sc.textFile("file:///SparkCourse/access_log_Jul95") + sc.textFile("file:///SparkCourse/access_log_Aug95")
+lines = sc.textFile("file://access_log_Jul95") + sc.textFile("file://access_log_Aug95")
 # Mapeia os status das requisições e em seguida filtra para retornar apenas as con status '404'
 result = lines.map(lambda x: addToResponses(x)).filter(lambda x: x == '404')
 
