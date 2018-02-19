@@ -16,7 +16,7 @@ def addToDataResponses(line):
     else:
         return [line.split("[")[1].split(":")[0], line.split("\" ")[2].split()[0]]
 
-lines = sc.textFile("file:///SparkCourse/access_log_Jul95") + sc.textFile("file:///SparkCourse/access_log_Aug95")
+lines = sc.textFile("file://access_log_Jul95") + sc.textFile("file://access_log_Aug95")
 # Mapeia a data e status das requisições e em seguida filtra para retornar apenas as con status '404'.
 dateResponse = lines.map(lambda x: addToDataResponses(x)).filter(lambda x: x[1] == "404" )
 # Agrupa por valor apenas as datas, , contando a quantidade de aparições de cada.
